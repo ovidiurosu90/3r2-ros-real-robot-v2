@@ -1,0 +1,10 @@
+{
+    "autodeskProduct": "Fusion360",
+    "type": "script",
+    "author": "syuntoku14",
+    "description": {
+        "": "URDF Exporter"
+    },
+    "supportedOS": "windows|mac",
+    "editEnabled": true
+}

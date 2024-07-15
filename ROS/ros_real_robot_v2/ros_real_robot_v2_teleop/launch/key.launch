@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<launch>
+
+    <!-- ros_real_robot_v2_teleop_key already has its own built in velocity smoother -->
+    <node name="ros_real_robot_v2_teleop_keyboard" pkg="ros_real_robot_v2_teleop" type="ros_real_robot_v2_teleop_key" output="screen" />
+</launch>
+

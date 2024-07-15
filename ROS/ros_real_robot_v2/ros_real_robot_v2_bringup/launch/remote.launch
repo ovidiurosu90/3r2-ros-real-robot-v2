@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<launch>
+
+    <!-- Sets robot_description param -->
+    <include file="$(find ros_real_robot_v2_bringup)/launch/includes/description.launch" />
+
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
+        <param name="publish_frequency" type="double" value="50.0" />
+    </node>
+</launch>
+

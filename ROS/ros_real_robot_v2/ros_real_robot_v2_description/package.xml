@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<package format="2">
+    <name>ros_real_robot_v2_description</name>
+    <version>2.0.0</version>
+    <description>The ros_real_robot_v2_description package</description>
+    <license>MIT</license>
+    <author email="ovidiu.rosu90@gmail.com">Ovidiu Rosu</author>
+    <maintainer email="ovidiu.rosu90@gmail.com">Ovidiu Rosu</maintainer>
+    <url type="website">http://ovidiurosu.com/</url>
+    <url type="repository">https://bitbucket.org/orosu/3r2_ros_real_robot_v2/</url>
+    <buildtool_depend>catkin</buildtool_depend>
+    <depend>urdf</depend>
+    <depend>xacro</depend>
+</package>

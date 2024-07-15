@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<launch>
+<!-- NOTE Not used yet -->
+<rosparam file="$(find ros_real_robot_v2_description)/launch/controller.yaml" command="load" />
+<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="ros_real_robot_v2" args="wheel_left__base_link_position_controller wheel_right__base_link_position_controller joint_state_controller" />
+<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+    <remap from="/joint_states" to="/ros_real_robot_v2/joint_states" />
+</node>
+
+</launch>

@@ -1,0 +1,87 @@
+<?xml version="1.0" ?>
+<robot name="ros_real_robot_v2" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:property name="standard_friction" value="1.0" />
+<xacro:property name="caster_friction" value="0.01" />
+<xacro:property name="wheel_friction" value="100.0" />
+
+<gazebo reference="base_link">
+    <mu1>${standard_friction}</mu1>
+    <mu2>${standard_friction}</mu2>
+    <selfCollide>true</selfCollide>
+    <gravity>true</gravity>
+</gazebo>
+
+<gazebo reference="wheel_left">
+    <mu1>${wheel_friction}</mu1>
+    <mu2>${wheel_friction}</mu2>
+    <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="wheel_right">
+    <mu1>${wheel_friction}</mu1>
+    <mu2>${wheel_friction}</mu2>
+    <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="caster_front">
+    <mu1>${caster_friction}</mu1>
+    <mu2>${caster_friction}</mu2>
+    <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="caster_rear">
+    <mu1>${caster_friction}</mu1>
+    <mu2>${caster_friction}</mu2>
+    <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="rplidar">
+    <mu1>${standard_friction}</mu1>
+    <mu2>${standard_friction}</mu2>
+    <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="base_scan">
+    <mu1>${standard_friction}</mu1>
+    <mu2>${standard_friction}</mu2>
+    <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="camera_front">
+    <mu1>${standard_friction}</mu1>
+    <mu2>${standard_friction}</mu2>
+    <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="camera_front_lens">
+    <mu1>${standard_friction}</mu1>
+    <mu2>${standard_friction}</mu2>
+    <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="camera_rear">
+    <mu1>${standard_friction}</mu1>
+    <mu2>${standard_friction}</mu2>
+    <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="camera_rear_lens">
+    <mu1>${standard_friction}</mu1>
+    <mu2>${standard_friction}</mu2>
+    <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="bno055">
+    <mu1>${standard_friction}</mu1>
+    <mu2>${standard_friction}</mu2>
+    <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="imu_link">
+    <mu1>${standard_friction}</mu1>
+    <mu2>${standard_friction}</mu2>
+    <selfCollide>true</selfCollide>
+</gazebo>
+
+</robot>

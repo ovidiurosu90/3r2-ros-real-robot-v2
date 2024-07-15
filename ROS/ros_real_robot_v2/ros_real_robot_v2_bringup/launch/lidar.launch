@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<launch>
+    <arg name="set_frame_id" default="base_scan" />
+
+    <!--
+    <include file="$(find rplidar_ros)/launch/rplidar.launch" />
+    -->
+    <node name="ros_real_robot_v2_lidar" pkg="rplidar_ros" type="rplidarNode" output="screen">
+        <param name="serial_port"      type="string" value="/dev/O_ttyUSB2" />
+        <param name="serial_baudrate"  type="int"    value="115200" /><!--A1/A2 -->
+
+        <param name="frame_id"         value="$(arg set_frame_id)" />
+        <param name="inverted"         type="bool"   value="false" /><!-- indicate whether the LIDAR is mounted inverted -->
+
+        <!-- NOTE Without this, the lidar readings will shake, so this is really needed -->
+        <param name="angle_compensate" type="bool"   value="true" /><!-- indicate whether the driver needs to do angle compensation -->
+    </node>
+
+    <!-- The rplidar is inversed 180 degrees, this is a hack to fix it
+    <node name="base_scan_to_base_link" pkg="tf" type="static_transform_publisher"
+          args="0 0 0 3.14159 0 0 base_link base_scan 10000" />
+     -->
+
+</launch>
+

@@ -1,0 +1,311 @@
+<?xml version="1.0" ?>
+<robot name="ros_real_robot_v2" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find ros_real_robot_v2_description)/urdf/materials.urdf.xacro" />
+<xacro:include filename="$(find ros_real_robot_v2_description)/urdf/ros_real_robot_v2.urdf.trans" />
+
+<xacro:include filename="$(find ros_real_robot_v2_description)/urdf/materials.gazebo.xacro" />
+<xacro:include filename="$(find ros_real_robot_v2_description)/urdf/physics.gazebo.xacro" />
+<xacro:include filename="$(find ros_real_robot_v2_description)/urdf/plugins.gazebo.xacro" />
+
+<!-- Added this to get rid of the following warning in gazebo:
+The root link base_link has an inertia specified in the URDF, but KDL does not support a root link with an inertia. -->
+<link name="base_footprint" />
+
+<link name="base_link">
+    <inertial>
+        <origin xyz="0.02369358148249585 -0.007174623713539957 0.14713024435724303" rpy="0 0 0" />
+        <mass value="9.059636339054258" />
+        <inertia ixx="0.088624" iyy="0.096502" izz="0.131908" ixy="-0.008483" iyz="0.000408" ixz="-0.008102" />
+    </inertial>
+    <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://ros_real_robot_v2_description/meshes/base_link.stl" scale="0.001 0.001 0.001" />
+        </geometry>
+        <material name="white" />
+    </visual>
+    <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://ros_real_robot_v2_description/meshes/base_link.stl" scale="0.001 0.001 0.001" />
+        </geometry>
+    </collision>
+</link>
+
+<link name="wheel_left">
+    <inertial>
+        <origin xyz="1.3111277514863686e-05 -0.04220393837307815 -4.2345787200026574e-05" rpy="0 0 0" />
+        <mass value="1.4971511982699452" />
+        <inertia ixx="0.00369" iyy="0.006388" izz="0.003689" ixy="-1e-06" iyz="2e-06" ixz="-0.0" />
+    </inertial>
+    <visual>
+        <origin xyz="0.0 -0.211 -0.1" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://ros_real_robot_v2_description/meshes/wheel_left.stl" scale="0.001 0.001 0.001" />
+        </geometry>
+        <material name="black" />
+    </visual>
+    <collision>
+        <origin xyz="0.0 -0.211 -0.1" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://ros_real_robot_v2_description/meshes/wheel_left.stl" scale="0.001 0.001 0.001" />
+        </geometry>
+    </collision>
+</link>
+
+<link name="wheel_right">
+    <inertial>
+        <origin xyz="1.3111277517311283e-05 0.04220393837307809 4.234578719894411e-05" rpy="0 0 0" />
+        <mass value="1.4971511982699452" />
+        <inertia ixx="0.00369" iyy="0.006388" izz="0.003689" ixy="1e-06" iyz="2e-06" ixz="0.0" />
+    </inertial>
+    <visual>
+        <origin xyz="0.0 0.211 -0.1" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://ros_real_robot_v2_description/meshes/wheel_right.stl" scale="0.001 0.001 0.001" />
+        </geometry>
+        <material name="black" />
+    </visual>
+    <collision>
+        <origin xyz="0.0 0.211 -0.1" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://ros_real_robot_v2_description/meshes/wheel_right.stl" scale="0.001 0.001 0.001" />
+        </geometry>
+    </collision>
+</link>
+
+<link name="caster_front">
+    <inertial>
+        <origin xyz="0.047646195189250826 2.718813883808386e-05 -0.024191474131117253" rpy="0 0 0" />
+        <mass value="0.28273597112312876" />
+        <inertia ixx="0.00022" iyy="0.000301" izz="0.000197" ixy="-0.0" iyz="0.0" ixz="8.4e-05" />
+    </inertial>
+    <visual>
+        <origin xyz="-0.1105 -0.0 -0.084" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://ros_real_robot_v2_description/meshes/caster_front.stl" scale="0.001 0.001 0.001" />
+        </geometry>
+        <material name="black" />
+    </visual>
+    <collision>
+        <origin xyz="-0.1105 -0.0 -0.084" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://ros_real_robot_v2_description/meshes/caster_front.stl" scale="0.001 0.001 0.001" />
+        </geometry>
+    </collision>
+</link>
+
+<link name="caster_rear">
+    <inertial>
+        <origin xyz="-0.047646195189256516 -2.7188138840351194e-05 -0.024191474131117288" rpy="0 0 0" />
+        <mass value="0.28273597112312876" />
+        <inertia ixx="0.00022" iyy="0.000301" izz="0.000197" ixy="-0.0" iyz="-0.0" ixz="-8.4e-05" />
+    </inertial>
+    <visual>
+        <origin xyz="0.1105 -0.0 -0.084" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://ros_real_robot_v2_description/meshes/caster_rear.stl" scale="0.001 0.001 0.001" />
+        </geometry>
+        <material name="black" />
+    </visual>
+    <collision>
+        <origin xyz="0.1105 -0.0 -0.084" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://ros_real_robot_v2_description/meshes/caster_rear.stl" scale="0.001 0.001 0.001" />
+        </geometry>
+    </collision>
+</link>
+
+<link name="rplidar">
+    <inertial>
+        <origin xyz="0.032660756880946856 -0.00022121256067097531 0.003022354511876796" rpy="0 0 0" />
+        <mass value="0.5776298875699506" />
+        <inertia ixx="0.000414" iyy="0.000395" izz="0.000648" ixy="-1e-06" iyz="3e-06" ixz="-8e-06" />
+    </inertial>
+    <visual>
+        <origin xyz="-0.03 0.0 -0.23858" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://ros_real_robot_v2_description/meshes/rplidar.stl" scale="0.001 0.001 0.001" />
+        </geometry>
+        <material name="black" />
+    </visual>
+    <collision>
+        <origin xyz="-0.03 0.0 -0.23858" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://ros_real_robot_v2_description/meshes/rplidar.stl" scale="0.001 0.001 0.001" />
+        </geometry>
+    </collision>
+</link>
+
+<link name="base_scan">
+    <inertial>
+        <origin xyz="-0.0064741402882804305 -0.0015227092989958774 0.005323024531278475" rpy="0 0 0" />
+        <mass value="0.06888185795084692" />
+        <inertia ixx="2.1e-05" iyy="2.1e-05" izz="4.1e-05" ixy="-0.0" iyz="-0.0" ixz="-1e-06" />
+    </inertial>
+    <visual>
+        <origin xyz="-0.071229 -0.0 -0.26988" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://ros_real_robot_v2_description/meshes/base_scan.stl" scale="0.001 0.001 0.001" />
+        </geometry>
+        <material name="black" />
+    </visual>
+    <collision>
+        <origin xyz="-0.071229 -0.0 -0.26988" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://ros_real_robot_v2_description/meshes/base_scan.stl" scale="0.001 0.001 0.001" />
+        </geometry>
+    </collision>
+</link>
+
+<link name="camera_front">
+    <inertial>
+        <origin xyz="0.025691004587218777 -9.152980606665397e-06 -0.030088097026009147" rpy="0 0 0" />
+        <mass value="0.25794552013170174" />
+        <inertia ixx="7.9e-05" iyy="0.000206" izz="0.000173" ixy="0.0" iyz="-0.0" ixz="4.7e-05" />
+    </inertial>
+    <visual>
+        <origin xyz="-0.0295 -0.0 -0.224" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://ros_real_robot_v2_description/meshes/camera_front.stl" scale="0.001 0.001 0.001" />
+        </geometry>
+        <material name="black" />
+    </visual>
+    <collision>
+        <origin xyz="-0.0295 -0.0 -0.224" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://ros_real_robot_v2_description/meshes/camera_front.stl" scale="0.001 0.001 0.001" />
+        </geometry>
+    </collision>
+</link>
+
+<link name="camera_front_lens" />
+
+<link name="camera_rear">
+    <inertial>
+        <origin xyz="-0.017268730716796715 -0.00010880033823036161 0.019460585139726982" rpy="0 0 0" />
+        <mass value="0.11555072453846764" />
+        <inertia ixx="2.7e-05" iyy="2.8e-05" izz="2.6e-05" ixy="0.0" iyz="-0.0" ixz="9e-06" />
+    </inertial>
+    <visual>
+        <origin xyz="0.15 -0.0 -0.0845" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://ros_real_robot_v2_description/meshes/camera_rear.stl" scale="0.001 0.001 0.001" />
+        </geometry>
+        <material name="black" />
+    </visual>
+    <collision>
+        <origin xyz="0.15 -0.0 -0.0845" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://ros_real_robot_v2_description/meshes/camera_rear.stl" scale="0.001 0.001 0.001" />
+        </geometry>
+    </collision>
+</link>
+
+<link name="camera_rear_lens" />
+
+<link name="bno055">
+    <inertial>
+        <origin xyz="0.01418901129170208 -0.050015254782258524 0.012898924176121318" rpy="0 0 0" />
+        <mass value="0.3009844640448875" />
+        <inertia ixx="0.000345" iyy="8.1e-05" izz="0.000351" ixy="-1e-06" iyz="1e-06" ixz="5e-06" />
+    </inertial>
+    <visual>
+        <origin xyz="-0.042 -0.06 -0.094" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://ros_real_robot_v2_description/meshes/bno055.stl" scale="0.001 0.001 0.001" />
+        </geometry>
+        <material name="black" />
+    </visual>
+    <collision>
+        <origin xyz="-0.042 -0.06 -0.094" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://ros_real_robot_v2_description/meshes/bno055.stl" scale="0.001 0.001 0.001" />
+        </geometry>
+    </collision>
+</link>
+
+<link name="imu_link" />
+
+<joint name="base_footprint__base_link" type="fixed">
+    <parent link="base_footprint" />
+    <child link="base_link" />
+</joint>
+
+<joint name="wheel_left__base_link" type="continuous">
+    <origin xyz="0.0 0.211 0.1" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="wheel_left" />
+    <axis xyz="0.0 1.0 0.0" />
+</joint>
+
+<joint name="wheel_right__base_link" type="continuous">
+    <origin xyz="0.0 -0.211 0.1" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="wheel_right" />
+    <axis xyz="0.0 1.0 0.0" />
+</joint>
+
+<joint name="caster_front__base_link" type="fixed">
+    <origin xyz="0.1105 0.0 0.084" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="caster_front" />
+</joint>
+
+<joint name="caster_rear__base_link" type="fixed">
+    <origin xyz="-0.1105 0.0 0.084" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="caster_rear" />
+</joint>
+
+<joint name="rplidar__base_link" type="fixed">
+    <origin xyz="0.03 0.0 0.23858" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="rplidar" />
+</joint>
+
+<joint name="base_scan__rplidar" type="fixed">
+    <origin xyz="0.041229 0.0 0.0313" rpy="0 0 0" />
+    <parent link="rplidar" />
+    <child link="base_scan" />
+</joint>
+
+<joint name="camera_front__base_link" type="fixed">
+    <origin xyz="0.0295 0.0 0.224" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="camera_front" />
+</joint>
+
+<joint name="camera_front_lens__camera_front" type="fixed">
+    <origin xyz="0.0671 -0.0 -0.034" rpy="0 0 0" />
+    <parent link="camera_front" />
+    <child link="camera_front_lens" />
+</joint>
+
+<joint name="camera_rear__base_link" type="fixed">
+    <origin xyz="-0.15 0.0 0.0845" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="camera_rear" />
+</joint>
+
+<joint name="camera_rear_lens__camera_rear" type="fixed">
+    <origin xyz="-0.0342 0.0 0.03105" rpy="0 0 -3.141592" />
+    <parent link="camera_rear" />
+    <child link="camera_rear_lens" />
+</joint>
+
+<joint name="bno055__base_link" type="fixed">
+    <origin xyz="0.042 0.06 0.094" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="bno055" />
+</joint>
+
+<joint name="imu_link__bno055" type="fixed">
+    <origin xyz="0.016515 -0.060077 0.022583" rpy="0 0 0" />
+    <parent link="bno055" />
+    <child link="imu_link" />
+</joint>
+
+</robot>
+

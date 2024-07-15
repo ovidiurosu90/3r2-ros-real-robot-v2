@@ -1,0 +1,65 @@
+<?xml version="1.0" ?>
+<robot name="ros_real_robot_v2" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:property name="color_grey" value="Gazebo/Grey" />
+<xacro:property name="color_black" value="Gazebo/Black" />
+<xacro:property name="color_white" value="Gazebo/White" />
+<xacro:property name="color_red" value="Gazebo/Red" />
+<xacro:property name="color_green" value="Gazebo/Green" />
+<xacro:property name="color_blue" value="Gazebo/Blue" />
+<xacro:property name="color_yellow" value="Gazebo/Yellow" />
+<xacro:property name="color_orange" value="Gazebo/Orange" />
+
+<gazebo reference="base_link">
+    <material>${color_white}</material>
+</gazebo>
+
+<gazebo reference="wheel_left">
+    <material>${color_black}</material>
+</gazebo>
+
+<gazebo reference="wheel_right">
+    <material>${color_black}</material>
+</gazebo>
+
+<gazebo reference="caster_front">
+    <material>${color_black}</material>
+</gazebo>
+
+<gazebo reference="caster_rear">
+    <material>${color_black}</material>
+</gazebo>
+
+<gazebo reference="rplidar">
+    <material>${color_black}</material>
+</gazebo>
+
+<gazebo reference="base_scan">
+    <material>${color_black}</material>
+</gazebo>
+
+<gazebo reference="camera_front">
+    <material>${color_black}</material>
+</gazebo>
+
+<gazebo reference="camera_front_lens">
+    <material>${color_grey}</material>
+</gazebo>
+
+<gazebo reference="camera_rear">
+    <material>${color_black}</material>
+</gazebo>
+
+<gazebo reference="camera_rear_lens">
+    <material>${color_grey}</material>
+</gazebo>
+
+<gazebo reference="bno055">
+    <material>${color_black}</material>
+</gazebo>
+
+<gazebo reference="imu_link">
+    <material>${color_black}</material>
+</gazebo>
+
+</robot>

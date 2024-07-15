@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package format="2">
+    <name>ros_real_robot_v2_navigation</name>
+    <version>2.0.0</version>
+    <description>The ros_real_robot_v2_navigation provides roslaunch scripts for starting the navigation.</description>
+    <license>Apache 2.0</license>
+    <author email="ovidiu.rosu90@gmail.com">Ovidiu Rosu</author>
+    <maintainer email="ovidiu.rosu90@gmail.com">Ovidiu Rosu</maintainer>
+    <url type="website">http://ovidiurosu.com/</url>
+    <url type="repository">https://bitbucket.org/orosu/3r2_ros_real_robot_v2/</url>
+    <buildtool_depend>catkin</buildtool_depend>
+    <exec_depend>amcl</exec_depend>
+    <exec_depend>map_server</exec_depend>
+    <exec_depend>move_base</exec_depend>
+    <exec_depend>ros_real_robot_v2_bringup</exec_depend>
+</package>
+

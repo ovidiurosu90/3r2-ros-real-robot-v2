@@ -1,0 +1,151 @@
+<?xml version="1.0" ?>
+<robot name="ros_real_robot_v2" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<gazebo>
+    <plugin name="control" filename="libgazebo_ros_control.so" />
+</gazebo>
+
+<gazebo>
+    <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+        <updateRate>50</updateRate>
+        <leftJoint>wheel_left__base_link</leftJoint>
+        <rightJoint>wheel_right__base_link</rightJoint>
+        <wheelSeparation>0.346</wheelSeparation>
+        <wheelDiameter>0.20</wheelDiameter>
+        <wheelAcceleration>1.0</wheelAcceleration>
+        <wheelTorque>20</wheelTorque>
+        <commandTopic>cmd_vel</commandTopic>
+        <odometryTopic>odom</odometryTopic>
+        <odometryFrame>odom</odometryFrame>
+        <robotBaseFrame>base_footprint</robotBaseFrame>
+        <odometrySource>world</odometrySource>
+        <publishWheelTF>false</publishWheelTF>
+        <publishOdom>true</publishOdom>
+        <publishWheelJointState>true</publishWheelJointState>
+        <legacyMode>false</legacyMode>
+        <rosDebugLevel>na</rosDebugLevel>
+        <publishOdomTF>true</publishOdomTF>
+        <publishTf>1</publishTf>
+    </plugin>
+</gazebo>
+
+<gazebo reference="base_scan">
+    <sensor type="gpu_ray" name="rplidar_a2">
+        <pose>0 0 0 0 0 0</pose>
+        <visualize>true</visualize>
+        <update_rate>10</update_rate>
+        <ray>
+            <scan>
+                <horizontal>
+                    <samples>720</samples>
+                    <resolution>1</resolution>
+                    <min_angle>-3.14159</min_angle>
+                    <max_angle>3.14159</max_angle>
+                </horizontal>
+            </scan>
+            <range>
+                <min>0.15</min>
+                <max>8.0</max>
+                <resolution>0.01</resolution>
+            </range>
+            <noise>
+                <type>gaussian</type>
+                <mean>0.0</mean>
+                <stddev>0.01</stddev>
+            </noise>
+        </ray>
+        <plugin name="gazebo_ros_base_scan_controller" filename="libgazebo_ros_gpu_laser.so">
+            <topicName>scan</topicName>
+            <frameName>base_scan</frameName>
+        </plugin>
+    </sensor>
+</gazebo>
+
+<gazebo reference="camera_front_lens">
+    <sensor type="camera" name="camera_front">
+        <always_on>true</always_on>
+        <visualize>true</visualize>
+        <camera>
+            <horizontal_fov>1.085595</horizontal_fov>
+            <image>
+                <width>640</width>
+                <height>480</height>
+                <format>R8G8B8</format>
+            </image>
+            <clip>
+                <near>0.03</near>
+                <far>100</far>
+            </clip>
+        </camera>
+        <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+            <alwaysOn>true</alwaysOn>
+            <updateRate>30</updateRate>
+            <cameraName>camera_front</cameraName>
+            <frameName>camera_front_frame</frameName>
+            <imageTopicName>image_raw</imageTopicName>
+            <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+            <hackBaseline>0.07</hackBaseline>
+            <distortionK1>0.0</distortionK1>
+            <distortionK2>0.0</distortionK2>
+            <distortionK3>0.0</distortionK3>
+            <distortionT1>0.0</distortionT1>
+            <distortionT2>0.0</distortionT2>
+        </plugin>
+    </sensor>
+</gazebo>
+
+<gazebo reference="camera_rear_lens">
+    <sensor type="camera" name="camera_rear">
+        <always_on>true</always_on>
+        <visualize>true</visualize>
+        <camera>
+            <horizontal_fov>1.085595</horizontal_fov>
+            <image>
+                <width>640</width>
+                <height>480</height>
+                <format>R8G8B8</format>
+            </image>
+            <clip>
+                <near>0.03</near>
+                <far>100</far>
+            </clip>
+        </camera>
+        <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+            <alwaysOn>true</alwaysOn>
+            <updateRate>30</updateRate>
+            <cameraName>camera_rear</cameraName>
+            <frameName>camera_rear_frame</frameName>
+            <imageTopicName>image_raw</imageTopicName>
+            <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+            <hackBaseline>0.07</hackBaseline>
+            <distortionK1>0.0</distortionK1>
+            <distortionK2>0.0</distortionK2>
+            <distortionK3>0.0</distortionK3>
+            <distortionT1>0.0</distortionT1>
+            <distortionT2>0.0</distortionT2>
+        </plugin>
+    </sensor>
+</gazebo>
+
+<gazebo reference="imu_link">
+    <gravity>true</gravity>
+    <sensor type="imu" name="imu_sensor">
+        <always_on>true</always_on>
+        <visualize>false</visualize>
+        <update_rate>50</update_rate>
+        <topic>__default_topic__</topic>
+        <plugin name="imu_plugin" filename="libgazebo_ros_imu_sensor.so">
+            <topicName>/imu/data</topicName>
+            <bodyName>imu_link</bodyName>
+            <updateRateHZ>50.0</updateRateHZ>
+            <gaussianNoise>0.0</gaussianNoise>
+            <xyzOffset>0 0 0</xyzOffset>
+            <rpyOffset>0 0 0</rpyOffset>
+            <frameName>imu_link</frameName>
+            <initialOrientationAsReference>false</initialOrientationAsReference>
+        </plugin>
+        <pose>0 0 0 0 0 0</pose>
+    </sensor>
+</gazebo>
+
+</robot>

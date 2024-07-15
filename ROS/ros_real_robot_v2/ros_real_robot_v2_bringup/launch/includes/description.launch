@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<launch>
+    <arg name="urdf_file" default="$(find xacro)/xacro --inorder '$(find ros_real_robot_v2_description)/urdf/ros_real_robot_v2.urdf.xacro'" />
+
+    <param name="robot_description" command="$(arg urdf_file)" />
+</launch>
+

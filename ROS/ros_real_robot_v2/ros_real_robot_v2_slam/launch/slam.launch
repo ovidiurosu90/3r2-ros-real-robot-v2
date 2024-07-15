@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<launch>
+    <!-- Arguments -->
+    <arg name="slam_methods" default="gmapping" doc="slam type [gmapping]" />
+    <arg name="launch_model" default="true" />
+    <arg name="rviz_config" default="$(find ros_real_robot_v2_slam)/rviz/$(arg slam_methods).rviz" />
+
+    <!-- SLAM: Gmapping, Cartographer, Hector, Karto, Frontier_exploration, RTAB-Map -->
+    <include file="$(find ros_real_robot_v2_slam)/launch/$(arg slam_methods).launch" />
+
+    <group if="$(arg launch_model)">
+        <include file="$(find ros_real_robot_v2_bringup)/launch/model.launch">
+            <arg name="rviz_config" value="$(arg rviz_config)" />
+        </include>
+    </group>
+</launch>
+

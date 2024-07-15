@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package format="2">
+    <name>ros_real_robot_v2_simulations</name>
+    <version>2.0.0</version>
+    <description>ROS packages for the ROS Real Robot v2 simulations (meta package)</description>
+    <license>Apache 2.0</license>
+    <author email="ovidiu.rosu90@gmail.com">Ovidiu Rosu</author>
+    <maintainer email="ovidiu.rosu90@gmail.com">Ovidiu Rosu</maintainer>
+    <url type="website">http://ovidiurosu.com/</url>
+    <url type="repository">https://bitbucket.org/orosu/3r2_ros_real_robot_v2/</url>
+    <buildtool_depend>catkin</buildtool_depend>
+    <exec_depend>ros_real_robot_v2_gazebo</exec_depend>
+    <export><metapackage/></export>
+</package>
+

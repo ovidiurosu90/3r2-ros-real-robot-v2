@@ -1,0 +1,58 @@
+<?xml version="1.0" ?>
+<launch>
+    <arg name="rviz_config" default="$(find ros_real_robot_v2_description)/rviz/model.rviz" />
+
+    <!-- Sets robot_description param & runs robot_state_publisher node -->
+    <include file="$(find ros_real_robot_v2_bringup)/launch/remote.launch" />
+
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+        <param name="use_gui" value="false" /><!-- NOTE Use joint_state_publisher_gui package if GUI is needed -->
+        <param name="rate" value="50" />
+    </node>
+
+
+    <!-- http://wiki.ros.org/imu_complementary_filter
+        Reads messages from imu/data_raw and optionally from imu/mag
+            Message containing raw IMU data, including angular velocities and linear accelerations
+        Publishes messages to imu/data
+            The fused Imu message, containing the orientation
+        NOTE Not needed as the ros_imu_bno055 node already publishes orientation
+     -->
+    <!-- <node pkg="imu_complementary_filter" type="complementary_filter_node" name="imu_complementary_filter_node" /> -->
+
+    <!-- http://docs.ros.org/en/melodic/api/robot_localization/html/index.html
+        Subscribe: /odom, /imu_data
+        Publish: /odometry/filtered
+        NOTE Odometry data sets the robot orientation (IMU data doesn't seem to make a difference)
+     -->
+    <node pkg="robot_localization" type="ekf_localization_node" name="ekf_localization_BNO055" clear_params="true">
+        <rosparam command="load" file="$(find ros_real_robot_v2_bringup)/param/ekf_localization.yaml" />
+        <remap from="odometry/filtered" to="odom" />
+    </node>
+
+    <!-- https://automaticaddison.com/sensor-fusion-using-the-ros-robot-pose-ekf-package/
+        Subscribe: /odom, /imu_data, /vo
+        Publish: /robot_pose_ekf/odom_combined, /tf (ATTENTION!)
+        NOTE It outputs this warning: [ WARN] : MSG to TF: Quaternion Not Properly Normalized
+        NOTE IMU data sets the robot orientation (Odometry data doesn't seem to make a difference)
+    -->
+    <!--
+    <node pkg="robot_pose_ekf" type="robot_pose_ekf" name="robot_pose_ekf">
+        <remap from="imu_data" to="imu/data" />
+        <param name="output_frame" value="odom" />
+        <param name="base_footprint_frame" value="base_footprint" />
+        <param name="freq" value="30.0" />
+        <param name="sensor_timeout" value="1.0" />
+        <param name="odom_used" value="true" />
+        <param name="imu_used" value="true" />
+        <param name="vo_used" value="false" />
+        <param name="gps_used" value="false" />
+        <param name="debug" value="false" />
+        <param name="self_diagnose" value="false" />
+    </node>
+     -->
+
+
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rviz_config)" />
+</launch>
+

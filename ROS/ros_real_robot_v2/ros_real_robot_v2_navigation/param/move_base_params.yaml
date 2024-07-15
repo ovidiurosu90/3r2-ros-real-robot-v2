@@ -1,0 +1,10 @@
+# The same parameters as in Turtlebot3
+shutdown_costmaps: false
+controller_frequency: 10.0
+planner_patience: 5.0 # how long should it wait to receive a new plan (e.g. when it gets stuck)
+controller_patience: 15.0 # it will try controlling the robot until 15s
+conservative_reset_dist: 3.0
+planner_frequency: 5.0
+oscillation_timeout: 10.0 # notify user if the robot is stuck for over 10s
+oscillation_distance: 0.2
+

@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<launch>
+    <arg name="frame_id" default="imu_link" />
+
+    <!-- node pkg="tf2_ros" type="static_transform_publisher" name="link1_broadcaster" args="0 0 0 0 0 0 1 fixed_frame $(arg frame_id)" /> -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find ros_imu_bno055)/utils/view_imu_rviz.rviz" />
+</launch>
+

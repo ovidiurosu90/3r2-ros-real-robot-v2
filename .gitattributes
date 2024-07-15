@@ -1,0 +1,5 @@
+* text=auto
+* text eol=lf
+CAD/3R2_ROS_Real_Robot_v2_v1.f3z filter=lfs diff=lfs merge=lfs -text
+CAD/ros_real_robot_v2_v1.f3z filter=lfs diff=lfs merge=lfs -text
+

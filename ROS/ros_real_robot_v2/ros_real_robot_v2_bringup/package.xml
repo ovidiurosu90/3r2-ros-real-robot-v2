@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package format="2">
+    <name>ros_real_robot_v2_bringup</name>
+    <version>2.0.0</version>
+    <description>roslaunch scripts for starting the ROS Real Robot v2</description>
+    <license>Apache 2.0</license>
+    <author email="ovidiu.rosu90@gmail.com">Ovidiu Rosu</author>
+    <maintainer email="ovidiu.rosu90@gmail.com">Ovidiu Rosu</maintainer>
+    <url type="website">http://ovidiurosu.com/</url>
+    <url type="repository">https://bitbucket.org/orosu/3r2_ros_real_robot_v2/</url>
+    <buildtool_depend>catkin</buildtool_depend>
+    <depend>roscpp</depend>
+    <depend>std_msgs</depend>
+    <depend>sensor_msgs</depend>
+    <exec_depend>ros_real_robot_v2_description</exec_depend>
+    <exec_depend>ros_real_robot_v2_teleop</exec_depend>
+    <exec_depend>joint_state_publisher</exec_depend>
+    <exec_depend>robot_state_publisher</exec_depend>
+    <exec_depend>rosserial_python</exec_depend>
+</package>
+

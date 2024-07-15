@@ -1,0 +1,13 @@
+global_costmap:
+    global_frame: map
+    robot_base_frame: base_footprint
+    update_frequency:  10.0 # James: 5.0, Turtlebot3: 10.0
+    publish_frequency: 10.0 # James: 5.0, Turtlebot3: 10.0
+    transform_tolerance: 0.5 # James: 1.0, Turtlebot3: 0.5
+    # static_map: true # unused since "plugins" is provided
+
+    plugins:
+        - {name: static_layer,    type: "costmap_2d::StaticLayer"}
+        - {name: obstacle_layer,  type: "costmap_2d::VoxelLayer"}
+        - {name: inflation_layer, type: "costmap_2d::InflationLayer"}
+

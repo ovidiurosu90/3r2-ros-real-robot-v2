@@ -1,0 +1,368 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "ROS Real Robot v2"
+Date "2022-09-13"
+Rev ""
+Comp ""
+Comment1 "Control Panel Connections"
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Switch:SW_Push_Open_Dual SW?
+U 1 1 6133C6EB
+P 2250 1550
+F 0 "SW?" H 2250 1760 50  0000 C CNN
+F 1 "SW_Emergency_stop_NO" H 2250 1669 50  0000 C CNN
+F 2 "" H 2250 1750 50  0001 C CNN
+F 3 "~" H 2250 1750 50  0001 C CNN
+	1    2250 1550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Voltmeter_DC MES?
+U 1 1 6133E7C6
+P 5400 3550
+F 0 "MES?" H 5553 3596 50  0000 L CNN
+F 1 "Voltmeter_12VDC" H 5553 3505 50  0000 L CNN
+F 2 "" V 5400 3650 50  0001 C CNN
+F 3 "~" V 5400 3650 50  0001 C CNN
+	1    5400 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Battery BT?
+U 1 1 61345602
+P 1700 6050
+F 0 "BT?" H 1808 6096 50  0000 L CNN
+F 1 "Battery_24V" H 1808 6005 50  0000 L CNN
+F 2 "" V 1700 6110 50  0001 C CNN
+F 3 "~" V 1700 6110 50  0001 C CNN
+	1    1700 6050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Battery BT?
+U 1 1 61345EDA
+P 1700 3000
+F 0 "BT?" H 1808 3046 50  0000 L CNN
+F 1 "Battery_12V" H 1808 2955 50  0000 L CNN
+F 2 "" V 1700 3060 50  0001 C CNN
+F 3 "~" V 1700 3060 50  0001 C CNN
+	1    1700 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Fuse F?
+U 1 1 61346909
+P 1700 5300
+F 0 "F?" V 1503 5300 50  0000 C CNN
+F 1 "Fuse_50A" V 1594 5300 50  0000 C CNN
+F 2 "" V 1630 5300 50  0001 C CNN
+F 3 "~" H 1700 5300 50  0001 C CNN
+	1    1700 5300
+	-1   0    0    1   
+$EndComp
+$Comp
+L MyLibrary:24V_120A_4pin_car_relay K?
+U 1 1 6134EAB5
+P 3300 5450
+F 0 "K?" H 3730 5496 50  0000 L CNN
+F 1 "24V_120A_4pin_car_relay" H 3730 5405 50  0000 L CNN
+F 2 "Relay_THT:Relay_SPST_Ehdis_4pin" H 3750 5400 50  0001 L CNN
+F 3 "https://a3.sofastcdn.com/attachment/7jioKBjnRiiSrjrjknRiwS77gwbf3zmp/L90-SERIES.pdf" H 4000 5300 50  0001 L CNN
+	1    3300 5450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1700 5850 1700 5450
+$Comp
+L Switch:SW_Push_Dual_x2 SW?
+U 1 1 6137216F
+P 2350 2700
+F 0 "SW?" H 2350 2985 50  0000 C CNN
+F 1 "SW_Push_Dual_x2_12V" H 2350 2894 50  0000 C CNN
+F 2 "" H 2350 2900 50  0001 C CNN
+F 3 "~" H 2350 2900 50  0001 C CNN
+	1    2350 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_Push_Dual_x2 SW?
+U 2 1 613726A9
+P 2350 5050
+F 0 "SW?" H 2350 5335 50  0000 C CNN
+F 1 "SW_Push_Dual_x2_24V" H 2350 5244 50  0000 C CNN
+F 2 "" H 2350 5250 50  0001 C CNN
+F 3 "~" H 2350 5250 50  0001 C CNN
+	2    2350 5050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 6137AC60
+P 5400 4000
+F 0 "#PWR?" H 5400 3750 50  0001 C CNN
+F 1 "GND" H 5405 3827 50  0000 C CNN
+F 2 "" H 5400 4000 50  0001 C CNN
+F 3 "" H 5400 4000 50  0001 C CNN
+	1    5400 4000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5400 3750 5400 4000
+Wire Wire Line
+	5400 2800 5400 3350
+$Comp
+L power:GND #PWR?
+U 1 1 6138206F
+P 1700 6500
+F 0 "#PWR?" H 1700 6250 50  0001 C CNN
+F 1 "GND" H 1705 6327 50  0000 C CNN
+F 2 "" H 1700 6500 50  0001 C CNN
+F 3 "" H 1700 6500 50  0001 C CNN
+	1    1700 6500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1700 6250 1700 6500
+$Comp
+L power:GND #PWR?
+U 1 1 61382C11
+P 1700 3450
+F 0 "#PWR?" H 1700 3200 50  0001 C CNN
+F 1 "GND" H 1705 3277 50  0000 C CNN
+F 2 "" H 1700 3450 50  0001 C CNN
+F 3 "" H 1700 3450 50  0001 C CNN
+	1    1700 3450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1700 3200 1700 3450
+Wire Wire Line
+	2550 5050 3100 5050
+$Comp
+L power:GND #PWR?
+U 1 1 61385D16
+P 3100 6100
+F 0 "#PWR?" H 3100 5850 50  0001 C CNN
+F 1 "GND" H 3105 5927 50  0000 C CNN
+F 2 "" H 3100 6100 50  0001 C CNN
+F 3 "" H 3100 6100 50  0001 C CNN
+	1    3100 6100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3100 5850 3100 6100
+$Comp
+L Device:Voltmeter_DC MES?
+U 1 1 6138B683
+P 5400 5800
+F 0 "MES?" H 5553 5846 50  0000 L CNN
+F 1 "Voltmeter_24VDC" H 5553 5755 50  0000 L CNN
+F 2 "" V 5400 5900 50  0001 C CNN
+F 3 "~" V 5400 5900 50  0001 C CNN
+	1    5400 5800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 6138B689
+P 5400 6250
+F 0 "#PWR?" H 5400 6000 50  0001 C CNN
+F 1 "GND" H 5405 6077 50  0000 C CNN
+F 2 "" H 5400 6250 50  0001 C CNN
+F 3 "" H 5400 6250 50  0001 C CNN
+	1    5400 6250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5400 6000 5400 6250
+Wire Wire Line
+	5400 5050 5400 5600
+$Comp
+L Connector:Screw_Terminal_01x02 J?
+U 1 1 6139C36E
+P 6100 5050
+F 0 "J?" H 6180 5042 50  0000 L CNN
+F 1 "ODrive_Screw_Terminal_01x02" H 6180 4951 50  0000 L CNN
+F 2 "" H 6100 5050 50  0001 C CNN
+F 3 "~" H 6100 5050 50  0001 C CNN
+	1    6100 5050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 6139C374
+P 5900 5400
+F 0 "#PWR?" H 5900 5150 50  0001 C CNN
+F 1 "GND" H 5905 5227 50  0000 C CNN
+F 2 "" H 5900 5400 50  0001 C CNN
+F 3 "" H 5900 5400 50  0001 C CNN
+	1    5900 5400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5900 5150 5900 5400
+Wire Wire Line
+	2150 5050 1700 5050
+Wire Wire Line
+	1700 5050 1700 5150
+Wire Wire Line
+	2150 2700 1700 2700
+Wire Wire Line
+	1700 2700 1700 2800
+Wire Wire Line
+	3600 5050 5400 5050
+Wire Wire Line
+	1700 5050 1700 4650
+Wire Wire Line
+	1700 4650 4850 4650
+Wire Wire Line
+	4850 4650 4850 5850
+Wire Wire Line
+	4850 5850 3500 5850
+Connection ~ 1700 5050
+NoConn ~ 2050 1750
+NoConn ~ 2450 1750
+Wire Wire Line
+	1650 1200 1650 1550
+Wire Wire Line
+	1650 1550 2050 1550
+Text Label 2800 1200 0    50   ~ 0
+nRST
+Text Label 2800 1550 0    50   ~ 0
+GND
+$Comp
+L Connector:Conn_01x03_Female J?
+U 1 1 618E5D7A
+P 3300 1750
+F 0 "J?" V 3146 1898 50  0000 L CNN
+F 1 "ODrive_J2_nRST_GND_Conn_01x03_Female" V 3237 1898 50  0000 L CNN
+F 2 "" H 3300 1750 50  0001 C CNN
+F 3 "~" H 3300 1750 50  0001 C CNN
+	1    3300 1750
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2450 1550 3200 1550
+NoConn ~ 3300 1550
+Wire Wire Line
+	3400 1200 3400 1550
+Wire Wire Line
+	1650 1200 3400 1200
+$Comp
+L Switch:SW_SPDT_MSM SW?
+U 1 1 61B2C943
+P 4000 2800
+F 0 "SW?" H 4000 2475 50  0000 C CNN
+F 1 "DPDT_Latching_Toggle_Switch" H 4000 2566 50  0000 C CNN
+F 2 "" H 4000 2800 50  0001 C CNN
+F 3 "~" H 4000 2800 50  0001 C CNN
+	1    4000 2800
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 61B30C36
+P 3900 4000
+F 0 "#PWR?" H 3900 3750 50  0001 C CNN
+F 1 "GND" H 3905 3827 50  0000 C CNN
+F 2 "" H 3900 4000 50  0001 C CNN
+F 3 "" H 3900 4000 50  0001 C CNN
+	1    3900 4000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3900 3850 3900 4000
+$Comp
+L Connector:Barrel_Jack J?
+U 1 1 618EEA23
+P 4200 3750
+F 0 "J?" H 4200 3400 50  0000 C CNN
+F 1 "ACDC_19V_2.37A_Jetson_Xavier_NX_Barrel_Jack" H 4200 3500 50  0000 C CNN
+F 2 "" H 4250 3710 50  0001 C CNN
+F 3 "~" H 4250 3710 50  0001 C CNN
+	1    4200 3750
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	5900 3000 5900 3150
+$Comp
+L Connector:Barrel_Jack J?
+U 1 1 618EBEAA
+P 6200 2900
+F 0 "J?" H 6200 2550 50  0000 C CNN
+F 1 "Jetson_Xavier_NX_Power_Input_Barrel_Jack" H 6200 2650 50  0000 C CNN
+F 2 "" H 6250 2860 50  0001 C CNN
+F 3 "~" H 6250 2860 50  0001 C CNN
+	1    6200 2900
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 613705E8
+P 5900 3150
+F 0 "#PWR?" H 5900 2900 50  0001 C CNN
+F 1 "GND" H 5905 2977 50  0000 C CNN
+F 2 "" H 5900 3150 50  0001 C CNN
+F 3 "" H 5900 3150 50  0001 C CNN
+	1    5900 3150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4200 2800 5400 2800
+Wire Wire Line
+	3000 2900 3800 2900
+Wire Wire Line
+	2550 2700 3800 2700
+Wire Wire Line
+	3000 2900 3000 3650
+Wire Wire Line
+	3000 3650 3900 3650
+$Comp
+L Switch:SW_MEC_5G SW?
+U 1 1 61341F42
+P 5900 1400
+F 0 "SW?" V 6000 1650 50  0000 C CNN
+F 1 "SW_Tactile_pbs_33b" V 5900 1950 50  0000 C CNN
+F 2 "" H 5900 1600 50  0001 C CNN
+F 3 "http://www.apem.com/int/index.php?controller=attachment&id_attachment=488" H 5900 1600 50  0001 C CNN
+	1    5900 1400
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	5900 1200 6400 1200
+Wire Wire Line
+	6400 1200 6400 1350
+Wire Wire Line
+	5900 1600 6400 1600
+Wire Wire Line
+	6400 1600 6400 1450
+$Comp
+L Connector:Conn_01x02_Female J?
+U 1 1 61B9B596
+P 6600 1350
+F 0 "J?" H 6628 1326 50  0000 L CNN
+F 1 "Teensy_GPIO5_GND_Conn_01x02_Female" H 6628 1235 50  0000 L CNN
+F 2 "" H 6600 1350 50  0001 C CNN
+F 3 "~" H 6600 1350 50  0001 C CNN
+	1    6600 1350
+	1    0    0    -1  
+$EndComp
+Text Label 6150 1200 0    50   ~ 0
+GPIO5
+Text Label 6150 1600 0    50   ~ 0
+GND
+Wire Wire Line
+	5400 2800 5900 2800
+Connection ~ 5400 2800
+Wire Wire Line
+	5900 5050 5400 5050
+Connection ~ 5400 5050
+$EndSCHEMATC

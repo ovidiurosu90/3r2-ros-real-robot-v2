@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP 24V_120A_4pin_car_relay
+D Power relay, NO, SPST, 30A
+K 30A Single Pole Relay
+F https://a3.sofastcdn.com/attachment/7jioKBjnRiiSrjrjknRiwS77gwbf3zmp/L90-SERIES.pdf
+$ENDCMP
+#
+#End Doc Library
