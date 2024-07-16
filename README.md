@@ -1,12 +1,10 @@
 # **3R2 ROS Real Robot v2**
 
-## NOTE 1
+## NOTES
 
-This project was brought to light from my private repository. Some of the resources may be obsolete by now, though feel free to reach out if you need any help.
+This project was brought to light from my private repository. Some of the resources may be obsolete by now, though feel free to reach out if you need any help. 
 
-## NOTE 2 
-
-This project was originally forked from James Bruton's Really Useful Robot (March 2021). His GitHub link is [here](https://github.com/XRobots/ReallyUsefulRobot "XRobots/ReallyUsefulRobot on GitHub")
+This project was originally forked from James Bruton's Really Useful Robot (March 2021). His GitHub link is [here](https://github.com/XRobots/ReallyUsefulRobot "XRobots/ReallyUsefulRobot on GitHub").
 
 
 ## Images
