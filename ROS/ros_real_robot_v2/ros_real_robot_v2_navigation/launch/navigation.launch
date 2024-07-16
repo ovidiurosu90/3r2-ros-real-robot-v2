@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <launch>
     <!-- Arguments -->
-    <arg name="map_file" default="$(find ros_real_robot_v2_navigation)/maps/apartment_jakoba_mulderplein_164.yaml" />
+    <arg name="map_file" default="$(find ros_real_robot_v2_navigation)/maps/apartment1.yaml" />
     <arg name="move_forward_only" default="false" /><!-- NOTE it can move backwards as well -->
     <arg name="launch_model" default="true" />
     <arg name="rviz_config" default="$(find ros_real_robot_v2_navigation)/rviz/navigation.rviz" />

@@ -7,7 +7,7 @@
     <author email="ovidiu.rosu90@gmail.com">Ovidiu Rosu</author>
     <maintainer email="ovidiu.rosu90@gmail.com">Ovidiu Rosu</maintainer>
     <url type="website">http://ovidiurosu.com/</url>
-    <url type="repository">https://bitbucket.org/orosu/3r2_ros_real_robot_v2/</url>
+    <url type="repository">https://github.com/ovidiurosu90/3r2-ros-real-robot-v2.git</url>
     <buildtool_depend>catkin</buildtool_depend>
     <exec_depend>ros_real_robot_v2_bringup</exec_depend>
     <exec_depend>ros_real_robot_v2_description</exec_depend>

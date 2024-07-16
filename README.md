@@ -30,7 +30,7 @@ This project was originally forked from James Bruton's Really Useful Robot (Marc
 ```bash
 mkdir ~/Repositories
 cd ~/Repositories/
-git clone https://orosu@bitbucket.org/orosu/3r2_ros_real_robot_v2.git
+git clone https://github.com/ovidiurosu90/3r2-ros-real-robot-v2.git
 cd 3r2_ros_real_robot_v2/
 vim README.md
 ```

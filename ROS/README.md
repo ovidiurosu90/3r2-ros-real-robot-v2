@@ -123,7 +123,7 @@ rosrun ros_real_robot_v2_teleop ros_real_robot_v2_teleop_key
 
 # On Ubuntu (3)
 roscd ros_real_robot_v2_navigation/maps/
-rosrun map_server map_saver -f apartment_jakoba_mulderplein_164
+rosrun map_server map_saver -f apartment1
 ```
 
 ## Navigate the known map
