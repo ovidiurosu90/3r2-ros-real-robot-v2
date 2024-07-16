@@ -1,10 +1,20 @@
-# **3R2 ROS Real Robot v2**
+# [3R2 ROS Real Robot v2](https://github.com/ovidiurosu90/3r2-ros-real-robot-v2)
 
-## NOTES
+## Abstract
+### Problem
+Navigate autonomously without a given map while avoiding obstacles
 
-This project was brought to light from my private repository. Some of the resources may be obsolete by now, though feel free to reach out if you need any help. 
+### Solution
+Autonomous Robot Car on ROS
 
-This project was originally forked from James Bruton's Really Useful Robot (March 2021). His GitHub link is [here](https://github.com/XRobots/ReallyUsefulRobot "XRobots/ReallyUsefulRobot on GitHub").
+### How
+- the whole project is open-source, and can be replicated by interested parties (note it requires a variety of skills like coding, 3d printing, soldering & crimping)
+- the robot is able to create a map of an unknown place, then navigate on that map while avoiding obstacles
+- SLAM packages on top of ROS are used for navigation
+
+### Notes
+- This project was brought to light from my private repository. Some of the resources may be obsolete by now, though feel free to reach out if you need any help
+- This project was originally forked from James Bruton's Really Useful Robot (March 2021). His GitHub repository is [here](https://github.com/XRobots/ReallyUsefulRobot "XRobots/ReallyUsefulRobot on GitHub").
 
 
 ## Images
